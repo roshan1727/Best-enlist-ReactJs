@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel-Video</title>
+    <script type="text/javascript">
+        var left = 1;
+        var right = 5;
+
+        function show() {
+
+            //body on reload
+            for (i = left; i <= right; i++) {
+                document.getElementById("box-" + i).style.display = "inline-block"
+            }
+        }
+
+        function moveleft() {
+            if (left <= 3 && right <= 7) {
+                document.getElementById("box-" + left).style.display = "none";
+                left += 1;
+                right += 1;
+                for (i = left; i <= right; i++) {
+                    document.getElementById("box-" + i).style.display = "inline-block"
+                }
+            }
+            else{
+                return;
+            }
+        }
+        
+        function moveright() {
+            if (left >= 2 && right >= 6) {
+                document.getElementById("box-" + right).style.display = "none";
+                left-= 1;
+                right-= 1;
+                for (i = left; i <= right; i++) {
+                    document.getElementById("box-" + i).style.display = "inline-block"
+                }
+            }
+            else{
+                return;
+            }
+        }
+    </script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .box {
+            width: 20%;
+            margin: 0px 10px 0px 10px;
+            display: none;
+        }
+
+        .box img {
+            height: 250px;
+            width: 100%;
+        }
+
+        .left-arrow,
+        .right-arrow {
+            margin-left: 10px;
+            width: 3%;
+            display: inline-block;
+        }
+
+        .left-arrow button,
+        .right-arrow button {
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body onload="show()">
+    <div class="container">
+        <div class="left-arrow" onclick="moveleft()">
+            <button>&lt;</button>
+        </div>
+        <div class="box" id="box-1">
+            <img src="/DAY-2/images/IMG-20190802-WA0043.jpg" alt="">
+        </div>
+        <div class="box" id="box-2">
+            <img src="/DAY-2/images/IMG-20190802-WA0044.jpg" alt="">
+        </div>
+        <div class="box" id="box-3">
+            <img src="/DAY-2/images/IMG-20190802-WA0045.jpg" alt="">
+        </div>
+        <div class="box" id="box-4">
+            <img src="/DAY-2/images/IMG-20190802-WA0046.jpg" alt="">
+        </div>
+        <div class="box" id="box-5">
+            <img src="/DAY-2/images/IMG-20190802-WA0043.jpg" alt="">
+        </div>
+        <div class="box" id="box-6">
+            <img src="/DAY-2/images/IMG-20190802-WA0044.jpg" alt="">
+        </div>
+        <div class="right-arrow" onclick="moveright()">
+            <button>&gt;</button>
+        </div>
+    </div>
+</body>
+
+</html>
