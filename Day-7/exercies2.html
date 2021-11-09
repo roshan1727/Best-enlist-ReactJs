@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change BackGround</title>
+</head>
+<body>
+    <input type="button" value="Change Background For Paragraph" onclick="background_Changes()">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab delectus voluptas amet! Rem perspiciatis veniam totam dicta, placeat tempora corporis laborum repellendus eveniet assumenda est sit error animi laboriosam consequatur.
+    Officia in explicabo iusto doloremque possimus ab! Sapiente ex impedit dolore distinctio. Qui tempore dignissimos nobis harum voluptatibus, libero non suscipit enim maxime quam aperiam doloremque quia facere! Molestias, temporibus!</p>
+</body>
+<script>
+    function background_Changes(){
+        docBody=document.getElementsByTagName("body")[0];
+        mybody=docBody.getElementsByTagName("p");
+        mypara=mybody[0];
+        mypara.style.background="blue";
+        
+    }
+</script>
+</html>
